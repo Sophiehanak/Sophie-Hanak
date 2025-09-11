@@ -4,87 +4,82 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sophie Hanak – Wissenschaftsjournalistin</title>
-  <meta name="description" content="Wissenschaftsjournalismus aus Wien: Reportagen, Interviews, Moderationen." />
+  <meta name="description" content="Wissenschaftsjournalismus aus Wien: Reportagen, Interviews und Moderationen." />
   <meta name="color-scheme" content="light dark" />
   <style>
     :root{
-      --bg:#fff; --fg:#111; --muted:#666; --card:#f5f5f6; --accent:#0a7ea4;
+      --bg:#ffffff; --fg:#101114; --muted:#5f6470; --accent:#0a5cab; --wave1:#0f5c99; --wave2:#0a4677;
     }
     @media (prefers-color-scheme: dark){
-      :root{ --bg:#0b0b0c; --fg:#f5f6f7; --muted:#b6bac1; --card:#15171a; }
+      :root{ --bg:#0b0c0f; --fg:#f3f5f7; --muted:#b6bac1; }
     }
     *{box-sizing:border-box}
-    body{
-      margin:0; background:var(--bg); color:var(--fg);
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      line-height:1.6;
-      text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
-    }
-    .wrap{max-width:960px; margin:0 auto; padding:0 18px}
+    body{ margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; line-height:1.6; }
+    .wrap{ max-width:960px; margin:0 auto; padding:0 18px; }
 
-    /* Kopfzeile simpel wie bisher */
-    header{border-bottom:1px solid rgba(0,0,0,.08)}
-    @media (prefers-color-scheme: dark){ header{border-bottom:1px solid rgba(255,255,255,.08)} }
-    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
-    .brand{font-weight:700; text-decoration:none; color:inherit}
-    nav a{color:inherit; text-decoration:none; margin-left:14px; opacity:.9}
-    nav a:hover{opacity:1}
+    /* Kopfzeile */
+    header{ border-bottom:1px solid color-mix(in lch, var(--fg) 10%, transparent); }
+    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
+    .brand{ font-family:"Times New Roman", Times, serif; font-weight:800; text-decoration:none; font-size:1.6rem; color:var(--wave1); }
+    .menu{ display:flex; gap:26px; }
+    .menu a{ font-family:"Times New Roman", Times, serif; text-decoration:none; font-size:1.1rem; font-weight:600; color:inherit; opacity:.9; }
+    .menu a:hover{ opacity:1; color:var(--wave1); }
 
-    /* Hero + Wellenabschluss */
-    .hero{padding:40px 0 0}
-    .hero h1{margin:0 0 6px; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.15}
-    .hero p{margin:0 0 18px; color:var(--muted)}
-    .wave{display:block; width:100%; height:auto; margin-top:22px}
+    /* Hero-Text */
+    .hero{ padding:40px 0 0; text-align:center; }
+    .hero h1{ margin:0 0 12px; font-size:clamp(2rem,4.2vw,2.8rem); line-height:1.2; font-family:"Times New Roman", Times, serif; }
+    .hero p{ margin:0 auto 18px; color:var(--muted); max-width:70ch; font-size:1.05rem; }
 
-    /* Hochformat-Video kompakt unter den Wellen */
-    .video-section{padding:16px 0 32px}
-    .video-frame{
-      background:#000; border-radius:14px; overflow:hidden;
-      max-width:360px; margin:10px auto; /* klein & zentriert */
-      box-shadow:0 6px 20px rgba(0,0,0,.12);
-    }
-    .video-frame video{
-      display:block; width:100%; height:auto; /* kein Beschnitt */
-    }
-    .video-caption{ text-align:center; font-size:.95rem; color:var(--muted); margin-top:8px }
+    /* Animierte dunklere blaue Wellen */
+    .waves{ position:relative; display:block; width:100%; height:120px; overflow:hidden; }
+    .waves svg{ position:absolute; inset:0; width:200%; height:100%; }
+    .waves svg .w1{ opacity:.7; fill:var(--wave1); }
+    .waves svg .w2{ opacity:.45; fill:var(--wave2); }
 
-    /* Folgeabschnitte schlicht belassen */
-    section{padding:34px 0}
-    h2{font-size:1.3rem; margin:0 0 10px}
-    .cardlike{background:var(--card); border-radius:12px; padding:14px}
+    /* Hochformat-Video */
+    .video-section{ padding:16px 0 36px; }
+    .video-frame{ background:#000; border-radius:14px; overflow:hidden; max-width:360px; margin:12px auto; box-shadow:0 6px 20px color-mix(in lch, var(--fg) 14%, transparent); }
+    .video-frame video{ display:block; width:100%; height:auto; }
+    .video-caption{ text-align:center; font-size:.95rem; color:var(--muted); margin-top:8px; }
 
-    footer{padding:30px 0 50px; color:var(--muted)}
+    section{ padding:34px 0; }
+    h2{ font-size:1.35rem; margin:0 0 10px; font-family:"Times New Roman", Times, serif; text-align:center; }
+    footer{ padding:30px 0 50px; color:var(--muted); }
+
+    @media (max-width:900px){ .video-frame{ max-width:320px; } .brand{font-size:1.3rem;} .menu a{font-size:1rem;} }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">Sophie Hanak</a>
-      <nav aria-label="Navigation">
-        <a href="#arbeiten">Arbeiten</a>
+      <nav class="menu" aria-label="Navigation">
         <a href="#ueber">Über mich</a>
+        <a href="#artikel">Artikel</a>
         <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <!-- Hero mit Wellen -->
     <section class="hero">
       <div class="wrap">
-        <h1>Wissenschaft verstehen. Geschichten, die wirken.</h1>
-        <p>Reportagen, Interviews und Moderationen an der Schnittstelle von Forschung, Gesellschaft und Klima.</p>
-
-        <!-- Wellenabschluss (wie bei dir; schlichtes SVG) -->
-        <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,48 C240,8 480,88 720,48 C960,8 1200,88 1440,48 L1440,80 L0,80 Z"
-                fill="currentColor" opacity="0.06"></path>
+        <h1>Wissenschaft spannend erzählt</h1>
+        <p>Ich schreibe über neue Projekte in der Wissenschaft, über Natur und Gesundheit – und über Themen, die unsere Umwelt und die Menschen bewegen. Fundiert und relevant für Auftraggeber, die Wert auf Qualität legen.</p>
+      </div>
+      <div class="waves" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path class="w1" d="M0,60 C180,20 360,100 540,60 C720,20 900,100 1080,60 C1260,20 1440,100 1620,60 L1620,120 L0,120 Z">
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; -180 0; 0 0" dur="9s" repeatCount="indefinite" />
+          </path>
+          <path class="w2" d="M0,72 C200,32 400,112 600,72 C800,32 1000,112 1200,72 C1400,32 1600,112 1800,72 L1800,120 L0,120 Z">
+            <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; -220 0; 0 0" dur="12s" repeatCount="indefinite" />
+          </path>
         </svg>
       </div>
     </section>
 
-    <!-- Dein Hochformat-Video: KLEIN, ZENTRIERT, UNTER DEN WELLEN -->
-    <section class="video-section" aria-label="Kurzvideo">
+    <section class="video-section" aria-label="Video">
       <div class="wrap">
         <figure class="video-frame">
           <video id="introVideo" playsinline controls preload="metadata" poster="poster-vertical.jpg">
@@ -92,33 +87,28 @@
             Dein Browser unterstützt das Video-Element nicht.
           </video>
         </figure>
-        <div class="video-caption">Kurzportrait · Hochformat · Ton optional.</div>
-      </div>
-    </section>
-
-    <!-- Ab hier alles schlicht lassen (wie gewohnt) -->
-    <section id="arbeiten">
-      <div class="wrap">
-        <h2>Ausgewählte Arbeiten</h2>
-        <div class="cardlike">
-          <p>Hier verlinkst du deine wichtigsten Texte/Projekte. Inhalt kannst du 1:1 von deiner bisherigen Seite übernehmen.</p>
-        </div>
+        <div class="video-caption">Kurzportrait · Hochformat · Ton optional</div>
       </div>
     </section>
 
     <section id="ueber">
       <div class="wrap">
         <h2>Über mich</h2>
-        <div class="cardlike">
-          <p>Kurzbio. Wenn du willst, kopiere die bisherigen Texte; Styling bleibt schlicht.</p>
-        </div>
+        <p>Ich habe Biologie studiert und danach in der Verhaltensforschung und Genetik gearbeitet. Anschließend lebte ich mehrere Jahre in Dänemark, wo ich den Einfluss von Offshore-Windkraftanlagen auf Schweinswale (<em>Phocoena phocoena</em>) erforschte. Nach drei Jahren kehrte ich mit meiner kleinen Familie nach Wien zurück und begann bei <strong>Die Presse</strong> in der Wissenschaftskommunikation zu arbeiten. Seitdem lässt mich das Schreiben über Wissenschaft nicht mehr los.</p>
+      </div>
+    </section>
+
+    <section id="artikel">
+      <div class="wrap">
+        <h2>Artikel</h2>
+        <p>Hier kannst du deine Veröffentlichungen sammeln.</p>
       </div>
     </section>
 
     <section id="kontakt">
       <div class="wrap">
         <h2>Kontakt</h2>
-        <p><a href="mailto:hello@sophiehanak.at">hello@sophiehanak.at</a></p>
+        <p><a href="mailto:sophie.hanak@hotmail.com">sophie.hanak@hotmail.com</a></p>
       </div>
     </section>
   </main>
@@ -128,17 +118,11 @@
   </footer>
 
   <script>
-    /* Jahr automatisch */
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    /* Optional: leises Autoplay nur wenn im Sichtbereich – ohne Einfluss auf Größe */
     const v = document.getElementById('introVideo');
     if (v){
       const io = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){ v.muted = true; v.play().catch(()=>{}); }
-          else { v.pause(); }
-        });
+        entries.forEach(e=>{ if(e.isIntersecting){ v.muted = true; v.play().catch(()=>{});} else { v.pause(); } });
       }, {threshold:0.6});
       io.observe(v);
     }
