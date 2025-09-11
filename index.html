@@ -4,175 +4,142 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sophie Hanak – Wissenschaftsjournalistin</title>
-  <meta name="description" content="Reportagen, Interviews und Moderationen an der Schnittstelle von Forschung, Gesellschaft und Klima." />
+  <meta name="description" content="Wissenschaftsjournalismus aus Wien: Reportagen, Interviews, Moderationen." />
   <meta name="color-scheme" content="light dark" />
   <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #0b0b0c;
-      --muted: #5c5f66;
-      --accent: #0a7ea4;
-      --card: #f6f7f8;
+    :root{
+      --bg:#fff; --fg:#111; --muted:#666; --card:#f5f5f6; --accent:#0a7ea4;
     }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #0b0b0c; --fg: #f5f6f7; --muted: #b2b6bd; --card: #15171a; }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0b0c; --fg:#f5f6f7; --muted:#b6bac1; --card:#15171a; }
     }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0; background: var(--bg); color: var(--fg);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
-      line-height: 1.6;
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:var(--bg); color:var(--fg);
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      line-height:1.6;
+      text-rendering:optimizeLegibility; -webkit-font-smoothing:antialiased;
     }
-    .wrap { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .wrap{max-width:960px; margin:0 auto; padding:0 18px}
 
-    /* Header */
-    header { position: sticky; top: 0; z-index: 40; backdrop-filter: saturate(140%) blur(8px);
-      background: color-mix(in lch, var(--bg) 85%, transparent);
-      border-bottom: 1px solid color-mix(in lch, var(--fg) 10%, transparent); }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .brand { font-weight: 700; text-decoration: none; color: var(--fg); }
-    .menu { display: flex; gap: 18px; }
-    .menu a { text-decoration: none; color: var(--fg); opacity: .9; }
-    .menu a:hover { opacity: 1; }
-    .cta { display: inline-block; padding: 10px 14px; border-radius: 999px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; }
+    /* Kopfzeile simpel wie bisher */
+    header{border-bottom:1px solid rgba(0,0,0,.08)}
+    @media (prefers-color-scheme: dark){ header{border-bottom:1px solid rgba(255,255,255,.08)} }
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{font-weight:700; text-decoration:none; color:inherit}
+    nav a{color:inherit; text-decoration:none; margin-left:14px; opacity:.9}
+    nav a:hover{opacity:1}
 
-    /* Hero mit Wellenabschluss */
-    .hero { background: linear-gradient(180deg, color-mix(in lch, var(--accent) 14%, var(--bg)) 0%, var(--bg) 60%); }
-    .hero-inner { padding: 42px 0 0; }
-    .hero h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.1; margin: 0 0 10px; }
-    .hero p { font-size: clamp(1rem, 1.2vw, 1.125rem); color: var(--muted); margin: 0 0 18px; max-width: 64ch; }
-    .wave { display: block; width: 100%; height: auto; margin-top: 30px; }
+    /* Hero + Wellenabschluss */
+    .hero{padding:40px 0 0}
+    .hero h1{margin:0 0 6px; font-size:clamp(1.8rem,4vw,2.6rem); line-height:1.15}
+    .hero p{margin:0 0 18px; color:var(--muted)}
+    .wave{display:block; width:100%; height:auto; margin-top:22px}
 
-    /* Hochformat-Video kompakt & zentriert */
-    .video-section { padding: 18px 0 36px; }
-    .video-frame {
-      background: #000;
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 8px 26px rgba(0,0,0,.14);
-      max-width: 360px;   /* schmale Breite */
-      margin: 10px auto;  /* zentriert */
+    /* Hochformat-Video kompakt unter den Wellen */
+    .video-section{padding:16px 0 32px}
+    .video-frame{
+      background:#000; border-radius:14px; overflow:hidden;
+      max-width:360px; margin:10px auto; /* klein & zentriert */
+      box-shadow:0 6px 20px rgba(0,0,0,.12);
     }
-    .video-frame video {
-      display: block;
-      width: 100%;
-      height: auto;       /* behält Proportion, kein Beschnitt */
+    .video-frame video{
+      display:block; width:100%; height:auto; /* kein Beschnitt */
     }
-    .video-caption {
-      text-align: center;
-      font-size: .95rem;
-      opacity: .75;
-      margin-top: 8px;
-    }
+    .video-caption{ text-align:center; font-size:.95rem; color:var(--muted); margin-top:8px }
 
-    /* Beispiel-Sektionen */
-    section { padding: 40px 0; }
-    .section-title { font-size: 1.4rem; margin: 0 0 14px; }
-    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
-    .card { grid-column: span 6; background: var(--card); border-radius: 16px; padding: 18px; text-decoration: none; color: inherit; transition: transform .2s ease, box-shadow .2s ease; }
-    .card:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,0,0,.14); }
-    .card h3 { margin: 2px 0 6px; font-size: 1.05rem; }
-    .card p { margin: 0; color: var(--muted); }
+    /* Folgeabschnitte schlicht belassen */
+    section{padding:34px 0}
+    h2{font-size:1.3rem; margin:0 0 10px}
+    .cardlike{background:var(--card); border-radius:12px; padding:14px}
 
-    .about { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
-    .about .bio { background: var(--card); padding: 20px; border-radius: 16px; }
-
-    footer { padding: 34px 0 60px; color: var(--muted); }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .menu { display: none; }
-      .card { grid-column: span 12; }
-      .about { grid-template-columns: 1fr; }
-      .video-frame { max-width: 320px; }
-    }
+    footer{padding:30px 0 50px; color:var(--muted)}
   </style>
 </head>
 <body>
   <header>
     <div class="wrap nav">
       <a class="brand" href="#">Sophie Hanak</a>
-      <nav class="menu" aria-label="Hauptnavigation">
+      <nav aria-label="Navigation">
         <a href="#arbeiten">Arbeiten</a>
-        <a href="#vortraege">Vorträge</a>
-        <a href="#ueber-mich">Über mich</a>
-        <a class="cta" href="#kontakt">Kontakt</a>
+        <a href="#ueber">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero" aria-label="Einstieg">
-      <div class="wrap hero-inner">
+    <!-- Hero mit Wellen -->
+    <section class="hero">
+      <div class="wrap">
         <h1>Wissenschaft verstehen. Geschichten, die wirken.</h1>
-        <p>Ich recherchiere, schreibe und moderiere zu Klima, Gesundheit und Technologie – präzise, verständlich, nah an den Menschen.</p>
-        <a class="cta" href="#kontakt">Anfragen & Kontakt</a>
-        <!-- Wellenabschluss -->
+        <p>Reportagen, Interviews und Moderationen an der Schnittstelle von Forschung, Gesellschaft und Klima.</p>
+
+        <!-- Wellenabschluss (wie bei dir; schlichtes SVG) -->
         <svg class="wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0,48 C240,8 480,88 720,48 C960,8 1200,88 1440,48 L1440,80 L0,80 Z" fill="currentColor" opacity="0.06"></path>
+          <path d="M0,48 C240,8 480,88 720,48 C960,8 1200,88 1440,48 L1440,80 L0,80 Z"
+                fill="currentColor" opacity="0.06"></path>
         </svg>
       </div>
     </section>
 
-    <!-- Hochformat-Video unter den Wellen -->
+    <!-- Dein Hochformat-Video: KLEIN, ZENTRIERT, UNTER DEN WELLEN -->
     <section class="video-section" aria-label="Kurzvideo">
-      <figure class="video-frame">
-        <video id="introVideo" playsinline controls preload="metadata" poster="poster-vertical.jpg">
-          <source src="20250731_214112.mp4" type="video/mp4" />
-          Dein Browser unterstützt das Video-Element nicht.
-        </video>
-      </figure>
-      <div class="video-caption">Kurzportrait · Hochformat · Ton optional.</div>
+      <div class="wrap">
+        <figure class="video-frame">
+          <video id="introVideo" playsinline controls preload="metadata" poster="poster-vertical.jpg">
+            <source src="20250731_214112.mp4" type="video/mp4" />
+            Dein Browser unterstützt das Video-Element nicht.
+          </video>
+        </figure>
+        <div class="video-caption">Kurzportrait · Hochformat · Ton optional.</div>
+      </div>
     </section>
 
-    <!-- Beispiel: Arbeiten -->
-    <section id="arbeiten" aria-label="Ausgewählte Arbeiten">
+    <!-- Ab hier alles schlicht lassen (wie gewohnt) -->
+    <section id="arbeiten">
       <div class="wrap">
-        <h2 class="section-title">Ausgewählte Arbeiten</h2>
-        <div class="grid">
-          <a class="card" href="#"><h3>Mikroplastik im Alltag</h3><p>Reportage, 2025 · Hintergründe, Daten, Stimmen aus Forschung und Industrie.</p></a>
-          <a class="card" href="#"><h3>KI im Klinikalltag</h3><p>Interview, 2025 · Chancen und Grenzen.</p></a>
+        <h2>Ausgewählte Arbeiten</h2>
+        <div class="cardlike">
+          <p>Hier verlinkst du deine wichtigsten Texte/Projekte. Inhalt kannst du 1:1 von deiner bisherigen Seite übernehmen.</p>
         </div>
       </div>
     </section>
 
-    <!-- Über mich -->
-    <section id="ueber-mich" class="about" aria-label="Über mich">
+    <section id="ueber">
       <div class="wrap">
-        <div class="bio">
-          <h2 class="section-title">Über mich</h2>
-          <p>Ich bin Wissenschaftsjournalistin aus Wien. Mein Fokus liegt auf fundierter Recherche und klarer Darstellung.</p>
-        </div>
-        <div class="bio">
-          <h2 class="section-title">Arbeitsweise</h2>
-          <p>Sorgfältig, neugierig, transparent. Ich arbeite datenbasiert und erzähle komplexe Zusammenhänge verständlich.</p>
+        <h2>Über mich</h2>
+        <div class="cardlike">
+          <p>Kurzbio. Wenn du willst, kopiere die bisherigen Texte; Styling bleibt schlicht.</p>
         </div>
       </div>
     </section>
 
-    <!-- Kontakt -->
-    <section id="kontakt" aria-label="Kontakt">
+    <section id="kontakt">
       <div class="wrap">
-        <h2 class="section-title">Kontakt</h2>
-        <p><a class="cta" href="mailto:hello@sophiehanak.at">hello@sophiehanak.at</a></p>
+        <h2>Kontakt</h2>
+        <p><a href="mailto:hello@sophiehanak.at">hello@sophiehanak.at</a></p>
       </div>
     </section>
   </main>
 
-  <footer class="wrap">
-    <div>© <span id="y"></span> Sophie Hanak · Wien</div>
+  <footer>
+    <div class="wrap">© <span id="y"></span> Sophie Hanak · Wien</div>
   </footer>
 
   <script>
+    /* Jahr automatisch */
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    /* Optional: leises Autoplay nur wenn im Sichtbereich – ohne Einfluss auf Größe */
     const v = document.getElementById('introVideo');
-    if (v) {
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => {
-          if (e.isIntersecting) { v.muted = true; v.play().catch(()=>{}); }
+    if (v){
+      const io = new IntersectionObserver(entries=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting){ v.muted = true; v.play().catch(()=>{}); }
           else { v.pause(); }
         });
-      }, { threshold: 0.6 });
+      }, {threshold:0.6});
       io.observe(v);
     }
   </script>
