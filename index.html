@@ -31,13 +31,20 @@
     p{margin-bottom:1.2rem;}
     a{color:var(--link);}
 
-    .video-section{max-width:1100px; margin:2rem auto; padding:0 1rem;}
-    .video-wrap{position:relative; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,.12); background:#000;}
-    .video-wrap video{display:block; width:100%; height:600px; object-fit:cover;}
+    .video-frame video {
+  width: 100%;
+  height: auto;
+  display: block;
+      max-height: 80vh;
+}
 
-    @media (max-width: 720px){
-      .video-wrap video{height:260px;}
-    }
+    <figure class="video-frame">
+  <video id="introVideo" playsinline controls preload="metadata" poster="/media/poster.jpg">
+    <source src="/media/fisch.mp4" type="video/mp4" />
+    <source src="/media/fisch.webm" type="video/webm" />
+    Dein Browser unterstützt das Video-Element nicht.
+  </video>
+</figure>
 
     footer{text-align:center; padding:1.5rem; background:var(--primary); color:#fff; margin-top:3rem; font-size:.9rem;}
   </style>
