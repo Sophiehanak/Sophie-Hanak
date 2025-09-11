@@ -46,7 +46,38 @@
     h2{ font-size:1.35rem; margin:0 0 10px; font-family:"Times New Roman", Times, serif; text-align:center; }
     footer{ padding:30px 0 50px; color:var(--muted); }
 
-    @media (max-width:900px){ .video-frame{ max-width:320px; } .brand{font-size:1.3rem;} .menu a{font-size:1rem;} }
+    /* Artikel: Rubriken & Karten */
+    .rubrik{ margin-top:8px; }
+    .rubrik h3{
+      margin:18px 0 10px;
+      font-family:"Times New Roman", Times, serif;
+      font-size:1.2rem;
+      color:var(--wave1);
+      text-align:left;
+    }
+    .articles-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+    .article-card{
+      grid-column:span 6;
+      display:block;
+      text-decoration:none; color:inherit;
+      border:1px solid color-mix(in lch, var(--fg) 10%, transparent);
+      background: color-mix(in lch, var(--fg) 6%, var(--bg));
+      border-radius:12px; overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .article-card:hover{ transform: translateY(-2px); box-shadow:0 10px 24px color-mix(in lch, var(--fg) 14%, transparent); }
+    .article-media{ aspect-ratio:16/9; background:#e6e8eb; overflow:hidden; }
+    .article-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .article-content{ padding:12px 14px; }
+    .article-content h4{ margin:0 0 6px; font-size:1.05rem; font-family:"Times New Roman", Times, serif; }
+    .article-meta{ color:var(--muted); font-size:.92rem; }
+
+    @media (max-width:900px){
+      .video-frame{ max-width:320px; }
+      .brand{font-size:1.3rem;}
+      .menu a{font-size:1rem;}
+      .article-card{ grid-column:span 12; }
+    }
   </style>
 </head>
 <body>
@@ -100,7 +131,103 @@
     <section id="artikel">
       <div class="wrap">
         <h2>Artikel</h2>
-        <p>Hier kannst du deine Veröffentlichungen sammeln.</p>
+
+        <div class="rubrik" id="gesundheit">
+          <h3>Gesundheit</h3>
+          <div class="articles-grid">
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-1" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/gesundheit-1.jpg" alt="Vorschaubild zu Artikel Gesundheit 1" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-2" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/gesundheit-2.jpg" alt="Vorschaubild zu Artikel Gesundheit 2" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="rubrik" id="umwelt-klima-energie">
+          <h3>Umwelt–Klima–Energie</h3>
+          <div class="articles-grid">
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-3" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/umwelt-1.jpg" alt="Vorschaubild zu Artikel Umwelt–Klima–Energie 1" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-4" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/umwelt-2.jpg" alt="Vorschaubild zu Artikel Umwelt–Klima–Energie 2" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="rubrik" id="veterinaermedizin">
+          <h3>Veterinärmedizin</h3>
+          <div class="articles-grid">
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-5" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/vet-1.jpg" alt="Vorschaubild zu Artikel Veterinärmedizin 1" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-6" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/vet-2.jpg" alt="Vorschaubild zu Artikel Veterinärmedizin 2" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="rubrik" id="melange">
+          <h3>Melange</h3>
+          <div class="articles-grid">
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-7" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/melange-1.jpg" alt="Vorschaubild zu Artikel Melange 1" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+            <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-8" target="_blank" rel="noopener noreferrer">
+              <div class="article-media">
+                <img src="media/artikel/melange-2.jpg" alt="Vorschaubild zu Artikel Melange 2" loading="lazy" />
+              </div>
+              <div class="article-content">
+                <h4>Titel des Artikels</h4>
+                <div class="article-meta">Medium · Jahr</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 
