@@ -3,29 +3,54 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Umwelt–Klima–Energie – Artikel von Sophie Hanak</title>
+  <title>Umwelt – Artikel von Sophie Hanak</title>
+  <meta name="description" content="Artikel von Sophie Hanak zu Umwelt, Klima und Energie." />
   <meta name="color-scheme" content="light dark" />
   <style>
-    :root{ --bg:#ffffff; --fg:#101114; --muted:#5f6470; --wave1:#0f5c99; }
-    @media (prefers-color-scheme: dark){ :root{ --bg:#0b0c0f; --fg:#f3f5f7; --muted:#b6bac1; } }
+    :root{
+      --bg:#ffffff; --fg:#101114; --muted:#5f6470; --accent:#0a5cab; --wave1:#0f5c99; --wave2:#0a4677;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{ --bg:#0b0c0f; --fg:#f3f5f7; --muted:#b6bac1; }
+    }
     *{box-sizing:border-box}
     body{ margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; line-height:1.6; }
     .wrap{ max-width:960px; margin:0 auto; padding:0 18px; }
+
     header{ border-bottom:1px solid color-mix(in lch, var(--fg) 10%, transparent); }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-    .brand{ font-family:"Times New Roman", Times, serif; font-weight:800; text-decoration:none; font-size:1.4rem; color:var(--wave1); }
-    .menu a{ text-decoration:none; color:inherit; margin-left:16px; }
-    h1{ font-family:"Times New Roman", Times, serif; margin:18px 0; text-align:center; }
+    .brand{ font-family:"Times New Roman", Times, serif; font-weight:800; text-decoration:none; font-size:1.6rem; color:var(--wave1); }
+    .menu{ display:flex; gap:26px; }
+    .menu a{ font-family:"Times New Roman", Times, serif; text-decoration:none; font-size:1.1rem; font-weight:600; color:inherit; opacity:.9; }
+    .menu a:hover{ opacity:1; color:var(--wave1); }
 
-    .articles-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:18px; padding:20px 0 40px; }
-    .article-card{ grid-column:span 6; display:block; text-decoration:none; color:inherit; border:1px solid color-mix(in lch, var(--fg) 10%, transparent); background: color-mix(in lch, var(--fg) 6%, var(--bg)); border-radius:12px; overflow:hidden; transition: transform .18s ease, box-shadow .18s ease; }
+    main{ padding:34px 0; }
+    h1{ font-family:"Times New Roman", Times, serif; text-align:center; font-size:1.8rem; margin-bottom:22px; }
+
+    .articles-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+    .article-card{
+      grid-column:span 6;
+      display:block;
+      text-decoration:none; color:inherit;
+      border:1px solid color-mix(in lch, var(--fg) 10%, transparent);
+      background: color-mix(in lch, var(--fg) 6%, var(--bg));
+      border-radius:12px; overflow:hidden;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
     .article-card:hover{ transform: translateY(-2px); box-shadow:0 10px 24px color-mix(in lch, var(--fg) 14%, transparent); }
     .article-media{ aspect-ratio:16/9; background:#e6e8eb; overflow:hidden; }
     .article-media img{ width:100%; height:100%; object-fit:cover; display:block; }
     .article-content{ padding:12px 14px; }
     .article-content h3{ margin:0 0 6px; font-size:1.05rem; font-family:"Times New Roman", Times, serif; }
     .article-meta{ color:var(--muted); font-size:.92rem; }
-    @media (max-width:900px){ .article-card{ grid-column:span 12; } }
+
+    footer{ padding:30px 0 50px; color:var(--muted); text-align:center; }
+
+    @media (max-width:900px){
+      .brand{font-size:1.3rem;}
+      .menu a{font-size:1rem;}
+      .article-card{ grid-column:span 12; }
+    }
   </style>
 </head>
 <body>
@@ -41,21 +66,41 @@
   </header>
 
   <main class="wrap">
-    <h1>Umwelt–Klima–Energie</h1>
+    <h1>Umwelt · Klima · Energie</h1>
 
     <div class="articles-grid">
-      <a class="article-card" href="https://DEIN-LINK-ZU-ARTIKEL-A" target="_blank" rel="noopener">
+
+      <!-- Artikel 1 -->
+      <a class="article-card" href="pdf/umwelt-artikel-1.pdf" target="_blank">
         <div class="article-media">
-          <img src="Strand_DK.jpg" alt="Teaser Umwelt–Klima–Energie" loading="lazy" />
+          <img src="Strand_DK.jpg" alt="Symbolbild Umwelt" />
         </div>
         <div class="article-content">
-          <h3>Titel des Artikels A</h3>
+          <h3>Titel des Artikels 1</h3>
           <div class="article-meta">Medium · Jahr</div>
         </div>
       </a>
 
-      <!-- weitere Karten nach Bedarf -->
+      <!-- Artikel 2 -->
+      <a class="article-card" href="pdf/umwelt-artikel-2.pdf" target="_blank">
+        <div class="article-media">
+          <img src="Strand_DK.jpg" alt="Symbolbild Umwelt" />
+        </div>
+        <div class="article-content">
+          <h3>Titel des Artikels 2</h3>
+          <div class="article-meta">Medium · Jahr</div>
+        </div>
+      </a>
+
     </div>
   </main>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> Sophie Hanak · Wien</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
