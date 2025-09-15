@@ -4,21 +4,80 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Melange – Artikel von Sophie Hanak</title>
-  <meta name="description" content="Artikel von Sophie Hanak zu verschiedenen Themen – eine Melange." />
+  <meta name="description" content="Artikel von Sophie Hanak in der Rubrik Melange." />
   <meta name="color-scheme" content="light dark" />
   <style>
-    :root{
-      --bg:#ffffff; --fg:#101114; --muted:#5f6470; --accent:#0a5cab; --wave1:#0f5c99; --wave2:#0a4677;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{ --bg:#0b0c0f; --fg:#f3f5f7; --muted:#b6bac1; }
-    }
+    :root{ --bg:#ffffff; --fg:#101114; --muted:#5f6470; --accent:#0a5cab; --wave1:#0f5c99; --wave2:#0a4677; }
+    @media (prefers-color-scheme: dark){ :root{ --bg:#0b0c0f; --fg:#f3f5f7; --muted:#b6bac1; } }
     *{box-sizing:border-box}
     body{ margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; line-height:1.6; }
     .wrap{ max-width:960px; margin:0 auto; padding:0 18px; }
-
     header{ border-bottom:1px solid color-mix(in lch, var(--fg) 10%, transparent); }
     .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
     .brand{ font-family:"Times New Roman", Times, serif; font-weight:800; text-decoration:none; font-size:1.6rem; color:var(--wave1); }
     .menu{ display:flex; gap:26px; }
-    .menu
+    .menu a{ font-family:"Times New Roman", Times, serif; text-decoration:none; font-size:1.1rem; font-weight:600; color:inherit; opacity:.9; }
+    .menu a:hover{ opacity:1; color:var(--wave1); }
+    main{ padding:34px 0; }
+    h1{ font-family:"Times New Roman", Times, serif; text-align:center; font-size:1.8rem; margin-bottom:22px; }
+    .articles-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+    .article-card{ grid-column:span 6; display:block; text-decoration:none; color:inherit; border:1px solid color-mix(in lch, var(--fg) 10%, transparent); background: color-mix(in lch, var(--fg) 6%, var(--bg)); border-radius:12px; overflow:hidden; transition:.18s; }
+    .article-card:hover{ transform: translateY(-2px); box-shadow:0 10px 24px color-mix(in lch, var(--fg) 14%, transparent); }
+    .article-media{ aspect-ratio:16/9; background:#e6e8eb; overflow:hidden; }
+    .article-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .article-content{ padding:12px 14px; }
+    .article-content h3{ margin:0 0 6px; font-size:1.05rem; font-family:"Times New Roman", Times, serif; }
+    .article-meta{ color:var(--muted); font-size:.92rem; }
+    footer{ padding:30px 0 50px; color:var(--muted); text-align:center; }
+    @media (max-width:900px){ .article-card{ grid-column:span 12; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="index.html">Sophie Hanak</a>
+      <nav class="menu" aria-label="Navigation">
+        <a href="index.html#ueber">Über mich</a>
+        <a href="index.html#artikel">Artikel</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Melange</h1>
+
+    <div class="articles-grid">
+
+      <!-- Artikel 1 -->
+      <a class="article-card" href="pdf/digitalesfundament.pdf" target="_blank" rel="noopener">
+        <div class="article-media">
+          <img src="Strand.jpg" alt="Symbolbild Strand" />
+        </div>
+        <div class="article-content">
+          <h3>Digitales Fundament</h3>
+          <div class="article-meta">Medium · Jahr</div>
+        </div>
+      </a>
+
+      <!-- Artikel 2 -->
+      <a class="article-card" href="pdf/rudolphinaroadtrip.pdf" target="_blank" rel="noopener">
+        <div class="article-media">
+          <img src="Strand.jpg" alt="Symbolbild Strand" />
+        </div>
+        <div class="article-content">
+          <h3>Rudolphina Roadtrip</h3>
+          <div class="article-meta">Medium · Jahr</div>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> Sophie Hanak · Wien</div>
+  </footer>
+
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
