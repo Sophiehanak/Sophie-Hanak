@@ -1,213 +1,155 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sophie Hanak – Wissenschaftsjournalistin</title>
-  <meta name="description" content="Wissenschaftsjournalismus aus Wien." />
-  <meta name="color-scheme" content="light dark" />
-  <style>
-    :root{
-      --bg:#ffffff; --fg:#101114; --muted:#5f6470; --accent:#0a5cab; --wave1:#0f5c99; --wave2:#0a4677;
-    }
-    @media (prefers-color-scheme: dark){
-      :root{ --bg:#0b0c0f; --fg:#f3f5f7; --muted:#b6bac1; }
-    }
-    *{box-sizing:border-box}
-    body{ margin:0; background:var(--bg); color:var(--fg); font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; line-height:1.6; }
-    .wrap{ max-width:960px; margin:0 auto; padding:0 18px; }
-
-    /* Kopfzeile */
-    header{ border-bottom:1px solid color-mix(in lch, var(--fg) 10%, transparent); }
-    .nav{ display:flex; align-items:center; justify-content:space-between; padding:14px 0; }
-    .brand{ font-family:"Times New Roman", Times, serif; font-weight:800; text-decoration:none; font-size:1.6rem; color:var(--wave1); }
-    .menu{ display:flex; gap:26px; }
-    .menu a{ font-family:"Times New Roman", Times, serif; text-decoration:none; font-size:1.1rem; font-weight:600; color:inherit; opacity:.9; }
-    .menu a:hover{ opacity:1; color:var(--wave1); }
-
-    /* Hero-Text */
-    .hero{ padding:40px 0 0; text-align:center; }
-    .hero h1{ margin:0 0 12px; font-size:clamp(2rem,4.2vw,2.8rem); line-height:1.2; font-family:"Times New Roman", Times, serif; }
-    .hero p{ margin:0 auto 18px; color:var(--muted); max-width:70ch; font-size:1.05rem; }
-
-    /* Animierte dunklere blaue Wellen */
-    .waves{ position:relative; display:block; width:100%; height:120px; overflow:hidden; }
-    .waves svg{ position:absolute; inset:0; width:200%; height:100%; }
-    .waves svg .w1{ opacity:.7; fill:var(--wave1); }
-    .waves svg .w2{ opacity:.45; fill:var(--wave2); }
-
-    /* Hochformat-Video */
-    .video-section{ padding:16px 0 36px; }
-    .video-frame{ background:#000; border-radius:14px; overflow:hidden; max-width:360px; margin:12px auto; box-shadow:0 6px 20px color-mix(in lch, var(--fg) 14%, transparent); }
-    .video-frame video{ display:block; width:100%; height:auto; }
-    .video-caption{ text-align:center; font-size:.95rem; color:var(--muted); margin-top:8px; }
-
-    section{ padding:34px 0; }
-    h2{ font-size:1.35rem; margin:0 0 10px; font-family:"Times New Roman", Times, serif; text-align:center; }
-    footer{ padding:30px 0 50px; color:var(--muted); }
-
-    /* Artikel: Rubriken & Karten (Teaser) */
-    .rubrik{ margin-top:8px; }
-    .rubrik h3{
-      margin:18px 0 10px;
-      font-family:"Times New Roman", Times, serif;
-      font-size:1.2rem;
-      color:var(--wave1);
-      text-align:left;
-    }
-    .articles-grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
-    .article-card{
-      grid-column:span 6;
-      display:block;
-      text-decoration:none; color:inherit;
-      border:1px solid color-mix(in lch, var(--fg) 10%, transparent);
-      background: color-mix(in lch, var(--fg) 6%, var(--bg));
-      border-radius:12px; overflow:hidden;
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-    .article-card:hover{ transform: translateY(-2px); box-shadow:0 10px 24px color-mix(in lch, var(--fg) 14%, transparent); }
-    .article-media{ aspect-ratio:16/9; background:#e6e8eb; overflow:hidden; }
-    .article-media img{ width:100%; height:100%; object-fit:cover; display:block; }
-    .article-content{ padding:12px 14px; }
-    .article-content h4{ margin:0 0 6px; font-size:1.05rem; font-family:"Times New Roman", Times, serif; }
-    .article-meta{ color:var(--muted); font-size:.92rem; }
-
-    @media (max-width:900px){
-      .video-frame{ max-width:320px; }
-      .brand{font-size:1.3rem;}
-      .menu a{font-size:1rem;}
-      .article-card{ grid-column:span 12; }
-    }
-  </style>
+  <title>Sophie Hanak | Veterinärmedizin & Wissenschaftsjournalismus</title>
+  <meta name="description" content="Fachautorin für Veterinärmedizin, Tiergesundheit, One Health und Medizin. Evidenzbasiert, klar, lesbar." />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header>
-    <div class="wrap nav">
-      <nav class="menu" aria-label="Navigation">
+  <header class="wrap">
+    <nav class="nav">
+      <a class="brand" href="#">Sophie Hanak</a>
+      <div class="navlinks">
+        <a href="#arbeiten">Arbeiten</a>
+        <a href="#angebot">Angebot</a>
         <a href="#ueber">Über mich</a>
-        <a href="#artikel">Artikel</a>
-        <a href="#kontakt">Kontakt</a>
-      </nav>
-    </div>
+        <a class="cta" href="#kontakt">Anfragen</a>
+      </div>
+    </nav>
   </header>
 
-  <main>
+  <main class="wrap">
     <section class="hero">
-      <div class="wrap">
-        <h1>Sophie Hanak</h1>
-        <p> Ich bin Journalistin und schreibe über Neuigkeiten in der Wissenschaft, Umwelt, Gesundheit, und Veterinärmedizin.</p>
+      <div class="hero-text">
+        <h1>Veterinärmedizin und Gesundheit. Klar. Evidenzbasiert. Lesbar.</h1>
+        <p class="lead">
+          Ich schreibe und redigiere Fach- und Publikumstexte zu Tiergesundheit, Diagnostik, One Health und Medizin.
+          Für Redaktionen, Verlage, Unis und Unternehmen, die wissenschaftliche Inhalte präzise und verständlich vermitteln wollen.
+        </p>
+        <p class="sub">
+          Formate: Feature/Reportage, Fachartikel (Vet), Studien- und Dossieraufbereitung, Webtexte und Newsletter.
+          Sprache: Deutsch & Englisch.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#kontakt">Projekt anfragen</a>
+          <a class="button ghost" href="#arbeiten">Ausgewählte Arbeiten</a>
+        </div>
+        <p class="proof">
+          Veröffentlicht u. a. bei Falter Heureka, Österreichische Ärztezeitung, upgrade, Universimed.
+        </p>
       </div>
-      <div class="waves" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path class="w1" d="M0,60 C180,20 360,100 540,60 C720,20 900,100 1080,60 C1260,20 1440,100 1620,60 L1620,120 L0,120 Z">
-            <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; -180 0; 0 0" dur="9s" repeatCount="indefinite" />
-          </path>
-          <path class="w2" d="M0,72 C200,32 400,112 600,72 C800,32 1000,112 1200,72 C1400,32 1600,112 1800,72 L1800,120 L0,120 Z">
-            <animateTransform attributeName="transform" attributeType="XML" type="translate" values="0 0; -220 0; 0 0" dur="12s" repeatCount="indefinite" />
-          </path>
-        </svg>
-      </div>
-    </section>
 
-    <section class="video-section" aria-label="Video">
-      <div class="wrap">
-        <figure class="video-frame">
-          <video id="introVideo" playsinline preload="metadata" poster="poster-vertical.jpg">
-            <source src="20250731_214112.mp4" type="video/mp4" />
-            Dein Browser unterstützt das Video-Element nicht.
-          </video>
-        </figure>
-      </div>
-    </section>
-
-    <section id="ueber">
-      <div class="wrap">
-        <h2>Über mich</h2>
-        <p>Ich habe Biologie studiert und in Verhaltensforschung und Genetik promoviert. Danach lebte ich mehrere Jahre in Dänemark, wo ich den Einfluss von Offshore-Windkraftanlagen auf Schweinswale (Phocoena phocoena) untersuchte. Nach meiner Rückkehr nach Wien habe ich meine Laufbahn als Journalistin begonnen und schreibe über Gesundheit, Umwelt, Klima, Veterinärmedizin und über spannende Forschungsprojekte aus aller Welt. Mich interessiert, wie Wissenschaft unser Leben verändert und wie man das so erzählen kann, dass es verständlich, relevant und gern gelesen wird. Ob Reportage, Magazintext, Website oder Kommunikationsprojekt: Ich übersetze komplexe Inhalte in klare, lebendige Geschichten, die zeigen, warum Forschung wichtig ist und was sie bewegt.</p>
-      </div>
-    </section>
-
-    <!-- Artikel: pro Rubrik nur ein Teaser, führt auf Unterseite -->
-    <section id="artikel">
-      <div class="wrap">
-        <h2>Artikel</h2>
-
-        <div class="rubrik" id="gesundheit">
-          <h3>Gesundheit</h3>
-          <div class="articles-grid">
-            <a class="article-card" href="gesundheit.html">
-              <div class="article-media">
-                <img src="Bärlauchwald.jpg" alt="Teaser Gesundheit" loading="lazy" />
-              </div>
-              <div class="article-content">
-              </div>
-            </a>
+      <div class="hero-card" aria-label="Profilkarte">
+        <div class="card">
+          <div class="card-top">
+            <div class="avatar" aria-hidden="true"></div>
+            <div>
+              <div class="name">Dr. Sophie Hanak, M.Sc.</div>
+              <div class="role">Wissenschaftsjournalistin · Vetmed/Medizin</div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="tag">Evidenzbasierte Texte</div>
+            <div class="tag">Schnelle Recherche</div>
+            <div class="tag">Saubere Quellenführung</div>
+            <div class="tag">Ton für Fach & Publikum</div>
           </div>
         </div>
-
-        <div class="rubrik" id="Umwelt">
-          <h3>Umwelt-Klima-Energie</h3>
-          <div class="articles-grid">
-            <a class="article-card" href="Umwelt.html">
-              <div class="article-media">
-                <img src="Windrad.jpg" alt="Teaser Umwelt–Klima–Energie" loading="lazy" />
-              </div>
-              <div class="article-content">
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="rubrik" id="veterinaermedizin">
-          <h3>Veterinärmedizin</h3>
-          <div class="articles-grid">
-            <a class="article-card" href="veterinaermedizin.html">
-              <div class="article-media">
-                <img src="Hund.jpg" alt="Teaser Veterinärmedizin" loading="lazy" />
-              </div>
-              <div class="article-content">
-              </div>
-            </a>
-          </div>
-        </div>
-
-        <div class="rubrik" id="melange">
-          <h3>Melange</h3>
-          <div class="articles-grid">
-            <a class="article-card" href="melange.html">
-              <div class="article-media">
-                <img src="Strand_DK.jpg" alt="Teaser Melange" loading="lazy" />
-              </div>
-              <div class="article-content">
-              </div>
-            </a>
-          </div>
-        </div>
-
       </div>
     </section>
 
-    <section id="kontakt">
-      <div class="wrap">
-        <h2>Kontakt</h2>
-        <p><a href="mailto:sophie.hanak@hotmail.com">Dr. Sophie Hanak, M.Sc.  sophie.hanak@hotmail.com</a></p>
+    <section id="arbeiten" class="section">
+      <h2>Ausgewählte Arbeiten</h2>
+      <div class="grid">
+        <a class="tile" href="#" aria-label="Link einfügen: Vetjournal PET/CT">
+          <div class="tile-title">Funktionelle Bildgebung mit Verantwortung</div>
+          <div class="tile-meta">Vetjournal · 02/2026 · Veterinärmedizin</div>
+          <div class="tile-desc">PET/CT in der Kleintiermedizin, klinische Praxis und regulatorische Anforderungen.</div>
+        </a>
+
+        <a class="tile" href="#" aria-label="Link einfügen: FWF SciLog">
+          <div class="tile-title">Hoffnung auf Klicks: Mit Websites Menschen in Krisen erreichen</div>
+          <div class="tile-meta">FWF SciLog · 2025 · Biologie & Medizin</div>
+          <div class="tile-desc">Wie digitale Informationsangebote zur Prävention beitragen können – mit Studienlage.</div>
+        </a>
+
+        <a class="tile" href="#" aria-label="Link einfügen: Uni Wien Rudolphina">
+          <div class="tile-title">Materialien der Zukunft: Das Geheimnis der DNA-Ringe</div>
+          <div class="tile-meta">Rudolphina · 2023 · Forschung</div>
+          <div class="tile-desc">Ringpolymere verständlich erklärt: Physik, Anwendungen, Einordnung.</div>
+        </a>
+
+        <a class="tile" href="#" aria-label="Link einfügen: upgrade Krems">
+          <div class="tile-title">Stressfrei zum Verfahren</div>
+          <div class="tile-meta">upgrade · 3/24 · Gesundheit</div>
+          <div class="tile-desc">Swiss-Cheese-Modell, Arbeitsgesundheit und institutionelle Praxis.</div>
+        </a>
+      </div>
+      <p class="hint">
+        Trage bei den vier Kacheln einfach deine echten Links ein. Wenn du magst, baue ich dir daraus auch eine Seite „Arbeiten“ mit mehr Auswahl.
+      </p>
+    </section>
+
+    <section id="angebot" class="section">
+      <h2>Angebot</h2>
+      <div class="two">
+        <div class="panel">
+          <h3>Für Redaktionen</h3>
+          <p>
+            Reportagen, Hintergrundstücke, Interviews, Erklärformate. Ich bringe Themen auf den Punkt, ohne die Wissenschaft zu glätten.
+            Besonders stark bin ich dort, wo Studienlage, Praxis und Einordnung zusammenkommen.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Für Organisationen</h3>
+          <p>
+            Studienzusammenfassungen, Dossiers, Fachartikel, Newsletter und Webtexte im Bereich Tiergesundheit und Medizin.
+            Wissenschaftlich sauber, regulatorisch sensibel, sprachlich zugänglich.
+          </p>
+        </div>
+      </div>
+      <p class="note">
+        Wichtig: Ich mache keine werblichen „Wunderclaims“. Wenn Evidenz unsicher ist, schreibe ich das so. Genau das schafft Vertrauen.
+      </p>
+    </section>
+
+    <section id="ueber" class="section">
+      <h2>Über mich</h2>
+      <div class="panel">
+        <p>
+          Ich habe Biologie studiert und in Verhaltensforschung und Genetik promoviert, danach u. a. in Dänemark zur Wirkung von Offshore-Windkraft auf Schweinswale geforscht.
+          Heute arbeite ich als freie Journalistin in Wien an der Schnittstelle von Wissenschaft, Medizin und Veterinärmedizin.
+        </p>
+        <p>
+          Ich lese Papers gern, finde die Kernaussage schnell und schreibe so, dass Fachleute nicht die Augen verdrehen und Leser:innen trotzdem dranbleiben.
+        </p>
       </div>
     </section>
+
+    <section id="kontakt" class="section">
+      <h2>Kontakt</h2>
+      <div class="panel">
+        <p class="lead2">
+          Schreib mir kurz, worum es geht, welche Zielgruppe du hast und bis wann du etwas brauchst. Ich antworte normalerweise innerhalb von 1–2 Werktagen.
+        </p>
+        <p>
+          <strong>E-Mail:</strong> <a href="mailto:sophie.hanak@hotmail.com">sophie.hanak@hotmail.com</a>
+          <span class="sep">·</span>
+          <strong>Ort:</strong> Wien
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="y"></span> Sophie Hanak · Wien</div>
+    </footer>
   </main>
 
-  <footer>
-    <div class="wrap">© <span id="y"></span> Sophie Hanak · Wien</div>
-  </footer>
-
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const v = document.getElementById('introVideo');
-    if (v){
-      const io = new IntersectionObserver(entries=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ v.muted = true; v.play().catch(()=>{});} else { v.pause(); } });
-      }, {threshold:0.6});
-      io.observe(v);
-    }
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
