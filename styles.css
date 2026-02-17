@@ -72,7 +72,7 @@ body{
   height: 320px;
   border-radius: 18px;
   border: 1px solid var(--line);
-  background-image: url("assets/hero.jpg");
+  background-image: url("Guernsey.png");
   background-size: cover;
   background-position: center;
 }
