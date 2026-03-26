@@ -99,18 +99,11 @@ h1{
   max-width: 500px;
 }
 
-.hero-text h1 {
-  font-size: 2.6rem;
-  color: var(--accent);
-  margin-bottom: 10px;
-}
-
-.hero-media video {
+.hero-image {
   width: 220px;
   height: 320px;
   object-fit: cover;
   border-radius: 6px;
-}
 }
 
 .lead{
