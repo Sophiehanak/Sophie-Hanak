@@ -6,6 +6,34 @@
   --soft: #f6f7f9;
 }
 
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0 30px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.topbar-text h1 {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 2.8rem;
+  margin: 0 0 8px;
+  color: #0f3e6d;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.topbar-image {
+  width: 120px;        /* 👈 klein halten */
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
 *{ box-sizing: border-box; }
 html,body{ margin:0; padding:0; }
 body{
