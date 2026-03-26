@@ -100,12 +100,13 @@ h1{
 }
 
 .hero-image {
-  width: 110px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 3px;
-}
 
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;
+  opacity: 0.9;     /* etwas ruhiger */
+}
 .lead{
   margin: 0 0 10px 0;
   color: var(--muted);
