@@ -1,187 +1,100 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sophie Hanak – Wissenschaftsjournalistin</title>
-  <meta name="description" content="Sophie Hanak – Wissenschaftsjournalistin aus Wien." />
-
-  <style>
-    :root{
-      --bg:#ffffff;
-      --text:#111111;
-      --muted:#666666;
-      --accent:#0f3e6d;
-    }
-
-    body{
-      margin:0;
-      background:var(--bg);
-      color:var(--text);
-      font-family: Georgia, "Times New Roman", serif;
-      line-height:1.7;
-    }
-
-    .wrap{
-      max-width:720px;
-      margin:0 auto;
-      padding:40px 20px;
-    }
-
-    /* Name */
-    h1{
-      font-size:2.6rem;
-      margin-bottom:6px;
-      color:var(--accent);
-      font-weight:700;
-    }
-
-    /* Beruf */
-    .subtitle{
-      font-size:1.2rem;
-      color:var(--muted);
-      margin-bottom:30px;
-    }
-
-    /* Navigation */
-    nav{
-      margin-bottom:40px;
-    }
-
-    nav a{
-      margin-right:22px;
-      text-decoration:none;
-      color:var(--text);
-      font-size:1rem;
-    }
-
-    nav a:hover{
-      color:var(--accent);
-    }
-
-    section{
-      margin-bottom:50px;
-    }
-
-    h2{
-      font-size:1.3rem;
-      margin-bottom:12px;
-      font-weight:700;
-    }
-
-    p{
-      margin:0 0 16px;
-    }
-
-    /* Artikel */
-    .category{
-      margin-bottom:20px;
-    }
-
-    .category-title{
-      font-weight:700;
-      margin-bottom:6px;
-    }
-
-    .category a{
-      display:block;
-      text-decoration:none;
-      color:var(--text);
-      margin:4px 0;
-    }
-
-    .category a:hover{
-      color:var(--accent);
-    }
-
-    /* Kontakt */
-    .contact a{
-      color:var(--accent);
-      text-decoration:none;
-    }
-
-    .contact a:hover{
-      text-decoration:underline;
-    }
-
-    footer{
-      margin-top:60px;
-      font-size:0.9rem;
-      color:var(--muted);
-    }
-
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sophie Hanak</title>
+  <meta name="description" content="Wissenschaftsjournalismus, Veterinärmedizin, Gesundheit.">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  <div class="wrap">
 
-    <h1>Sophie Hanak</h1>
-    <div class="subtitle">Wissenschaftsjournalistin</div>
+  <div class="image-bar"></div>
 
-    <nav>
-      <a href="#ueber">Über mich</a>
-      <a href="#artikel">Artikel</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#">Sophie Hanak</a>
+      <nav class="nav">
+        <a href="#arbeiten">Arbeiten</a>
+        <a href="#ueber">Über</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+    </div>
+  </header>
 
-    <section id="intro">
-      <p>
-        Ich schreibe über neue Projekte in der Wissenschaft, über Natur und Gesundheit – 
-        und über Themen, die unsere Umwelt und die Menschen bewegen.
+  <main class="wrap">
+
+    <section class="intro">
+      <h1>Wissenschaft & Veterinärmedizin – klar, ruhig, lesbar.</h1>
+      <p class="lead">
+        Ich schreibe und redigiere Texte zu Tiergesundheit, Diagnostik, One Health und Medizin.
+      </p>
+      <p class="sub">
+        Für Redaktionen, Verlage und Organisationen.
       </p>
     </section>
 
-    <section id="ueber">
-      <h2>Über mich</h2>
-      <p>
-        Ich habe Biologie studiert und danach in der Verhaltensforschung und Genetik gearbeitet.
-        Anschließend lebte ich mehrere Jahre in Dänemark, wo ich den Einfluss von Offshore-Windkraftanlagen
-        auf Schweinswale (<em>Phocoena phocoena</em>) erforschte.
-      </p>
-      <p>
-        Nach drei Jahren kehrte ich mit meiner Familie nach Wien zurück und begann bei
-        <em>Die Presse</em> in der Wissenschaftskommunikation zu arbeiten.
-        Seitdem lässt mich das Schreiben über Wissenschaft nicht mehr los.
-      </p>
+    <section id="arbeiten" class="section">
+      <h2>Ausgewählte Arbeiten</h2>
+
+      <div class="cards">
+        <a class="card" href="DEIN-ARTIKEL-1.pdf" target="_blank" rel="noopener">
+          <div class="card-title">Titel deines Artikels</div>
+          <div class="card-meta">Medium · Jahr · Thema</div>
+          <div class="card-desc">Ein kurzer Satz, worum es geht.</div>
+        </a>
+
+        <a class="card" href="DEIN-ARTIKEL-2.pdf" target="_blank" rel="noopener">
+          <div class="card-title">Titel deines Artikels</div>
+          <div class="card-meta">Medium · Jahr · Thema</div>
+          <div class="card-desc">Ein kurzer Satz, worum es geht.</div>
+        </a>
+
+        <a class="card" href="DEIN-ARTIKEL-3.pdf" target="_blank" rel="noopener">
+          <div class="card-title">Titel deines Artikels</div>
+          <div class="card-meta">Medium · Jahr · Thema</div>
+          <div class="card-desc">Ein kurzer Satz, worum es geht.</div>
+        </a>
+
+        <a class="card" href="DEIN-ARTIKEL-4.pdf" target="_blank" rel="noopener">
+          <div class="card-title">Titel deines Artikels</div>
+          <div class="card-meta">Medium · Jahr · Thema</div>
+          <div class="card-desc">Ein kurzer Satz, worum es geht.</div>
+        </a>
+      </div>
     </section>
 
-    <section id="artikel">
-      <h2>Artikel</h2>
-
-      <div class="category">
-        <div class="category-title">Gesundheit</div>
-        <a href="gesundheit.html">→ Alle Artikel anzeigen</a>
+    <section id="ueber" class="section">
+      <h2>Über</h2>
+      <div class="box">
+        <p>
+          Ich bin promovierte Biologin und freie Journalistin in Wien. Ich arbeite an der Schnittstelle von Wissenschaft, Gesundheit und Veterinärmedizin.
+        </p>
+        <p>
+          Ich lese Studien, ordne Evidenz ein und schreibe so, dass Texte fachlich sauber und zugleich gut lesbar bleiben.
+        </p>
       </div>
-
-      <div class="category">
-        <div class="category-title">Umwelt · Klima · Energie</div>
-        <a href="umwelt.html">→ Alle Artikel anzeigen</a>
-      </div>
-
-      <div class="category">
-        <div class="category-title">Veterinärmedizin</div>
-        <a href="veterinaermedizin.html">→ Alle Artikel anzeigen</a>
-      </div>
-
-      <div class="category">
-        <div class="category-title">Melange</div>
-        <a href="melange.html">→ Alle Artikel anzeigen</a>
-      </div>
-
     </section>
 
-    <section id="kontakt" class="contact">
+    <section id="kontakt" class="section">
       <h2>Kontakt</h2>
-      <p>
-        <a href="mailto:office@sophiehanak.at">sophie.hanak@hotmail.com</a>
-      </p>
+      <div class="box">
+        <p>
+          E-Mail:
+          <a href="mailto:sophie.hanak@hotmail.com">sophie.hanak@hotmail.com</a>
+        </p>
+      </div>
     </section>
 
-    <footer>
-      © 2026 Sophie Hanak · Wien
+    <footer class="footer">
+      <p>© <span id="year"></span> Sophie Hanak</p>
     </footer>
 
-  </div>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
