@@ -205,3 +205,13 @@ a:hover{ text-decoration: underline; }
   color: var(--muted);
   padding-bottom: 26px;
 }
+body::before{
+  content: "";
+  display: block;
+  width: 100%;
+  height: 120px;
+  background-image: url("Laaben.JPG");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #e5e7eb;
+}
